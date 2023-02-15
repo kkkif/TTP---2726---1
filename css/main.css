@@ -12,7 +12,7 @@
   --bg-secondary: #fff;
   --bg-black: #000;
   --bg-red: #EF233C;
-  --bg-whitedr: #F2F2F2;
+  --bg-body: #F2F2F2;
   --bg-blacklt: #222222;
 }
 
@@ -20,12 +20,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-li {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 40px;
 }
 
 ul {
@@ -37,19 +31,10 @@ a {
   text-decoration: none;
 }
 
-p > a {
-  text-decoration: underline;
-  color: var(--color-red);
-}
-
 img {
   max-width: 100%;
   display: block;
   margin: auto;
-}
-
-picture > img {
-  border-radius: 30px;
 }
 
 button {
@@ -60,25 +45,13 @@ button {
   cursor: pointer;
 }
 
-p {
-  text-indent: 20px;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 34px;
-  margin-bottom: 30px;
-}
-
-picture + p {
-  margin: 30px 0;
-}
-
 body {
   font-family: var(--ff-monserrat);
   font-size: 16px;
   line-height: 1;
   font-weight: 400;
-  color: var(--color-secondary);
-  background: var(--bg-secondary);
+  color: var(--color-primary);
+  background: var(--bg-body);
   overflow-x: hidden;
 }
 body.hidden {
@@ -95,7 +68,7 @@ body.hidden {
   background-size: cover;
   padding-bottom: 102px;
 }
-@media (max-width: 450px) {
+@media (max-width: 590px) {
   .header {
     background: var(--color-black);
     padding-bottom: 30px;
@@ -131,13 +104,14 @@ body.hidden {
 @media (max-width: 590px) {
   .header-fixed {
     padding: 30px 0;
+    background: var(--color-black);
   }
 }
 .header-fixed.active {
-  background: url(../img/header-bg.jpg) no-repeat;
+  background: url(../img/header-bg.jpg) no-repeat top right;
   background-size: cover;
 }
-@media (max-width: 450px) {
+@media (max-width: 590px) {
   .header-fixed.active {
     background: var(--color-black);
   }
@@ -193,6 +167,7 @@ body.hidden {
   font-size: 24px;
   line-height: 29px;
   text-transform: uppercase;
+  color: var(--color-secondary);
 }
 @media (max-width: 768px) {
   .header .nav {
@@ -228,6 +203,7 @@ body.hidden {
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
+  color: var(--color-secondary);
 }
 .header-container {
   display: flex;
@@ -258,44 +234,16 @@ body.hidden {
 @media (max-width: 590px) {
   .header-btn:first-child {
     width: 250px;
+    color: var(--color-black);
   }
 }
 @media (max-width: 590px) {
   .header-btn {
     width: 250px;
+    color: var(--color-black);
   }
 }
-@media (max-width: 1100px) {
-  .header-bottom {
-    padding: 0 20px;
-  }
-}
-.header-bottom h1 {
-  max-width: 800px;
-  margin: 70px auto 0;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 60px;
-  text-align: center;
-}
-@media (max-width: 590px) {
-  .header-bottom h1 {
-    word-wrap: break-word;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 50px;
-    margin: 30px 0;
-  }
-}
-@media (max-width: 450px) {
-  .header-bottom h1 {
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 50px;
-    text-align: left;
-  }
-}
-.header-bottom-block {
+.header-bottom {
   max-width: 1040px;
   width: 100%;
   margin: 0 auto;
@@ -305,57 +253,75 @@ body.hidden {
   border-radius: 26px;
   padding: 30px 0 65px;
 }
-@media (max-width: 450px) {
-  .header-bottom-block {
-    padding: 0;
+@media (max-width: 1100px) {
+  .header-bottom {
+    padding: 30px 15px 65px;
   }
 }
-.header-bottom-container {
-  margin: 75px auto 0;
+@media (max-width: 590px) {
+  .header-bottom {
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+    padding: 30px 15px;
+  }
+}
+.header-bottom img {
+  border-radius: 12px;
+}
+.header-bottom h1 {
+  max-width: 800px;
+  margin: 70px auto 75px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  color: var(--color-secondary);
+}
+@media (max-width: 590px) {
+  .header-bottom h1 {
+    word-wrap: break-word;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 50px;
+    margin: 30px 0;
+    text-align: left;
+  }
+}
+.header-bottom ul {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  max-width: 800px;
-  width: 100%;
 }
-@media (max-width: 590px) {
-  .header-bottom-container {
-    margin: 0;
-  }
-}
-.header-bottom-btn {
+.header-bottom ul li {
   padding: 10px 20px;
   font-size: 18px;
   line-height: 40px;
   color: var(--color-secondary);
-  border: 1px solid #FFFFFF;
+  border: 1px solid var(--color-secondary);
   border-radius: 12px;
+  text-align: center;
 }
-.header-bottom-btn:hover {
+.header-bottom ul li:hover {
   background: var(--color-secondary);
   color: var(--color-blacklt);
   box-shadow: 4px 6px 6px rgba(104, 95, 95, 0.75);
 }
 @media (max-width: 450px) {
-  .header-bottom-btn {
+  .header-bottom ul li {
     max-width: 400px;
     width: 100%;
-  }
-}
-@media (max-width: 850px) {
-  .header-bottom {
-    padding: 15px 10px 0;
   }
 }
 
 .article {
   width: 100%;
-  position: relative;
-  z-index: 2;
+  max-width: 1000px;
   color: var(--color-primary);
   padding: 50px 0 84px;
-  max-width: 1000px;
   margin: 0 auto;
 }
 @media (max-width: 1100px) {
@@ -374,10 +340,30 @@ body.hidden {
     padding: 30px 15px 100px 15px;
   }
 }
+.article li {
+  font-size: 18px;
+  line-height: 34px;
+}
+.article p > a {
+  text-decoration: underline;
+  color: var(--color-red);
+}
+.article p {
+  text-indent: 20px;
+  font-size: 18px;
+  line-height: 34px;
+  margin-bottom: 30px;
+}
+.article picture > img {
+  border-radius: 30px;
+}
+.article picture + p {
+  margin: 30px 0;
+}
 .article h2 {
   font-weight: 600;
   font-size: 36px;
-  line-height: 34px;
+  line-height: 36px;
   margin: 40px 0;
   color: var(--color-red);
   text-align: center;
@@ -448,6 +434,16 @@ body.hidden {
   text-align: center;
   padding: 20px 0;
 }
+@media (max-width: 590px) {
+  .article tbody td {
+    font-size: 16px;
+  }
+}
+@media (max-width: 400px) {
+  .article tbody td {
+    font-size: 13px;
+  }
+}
 .article tbody td:first-child {
   text-align: left;
   padding-left: 20px;
@@ -464,11 +460,6 @@ body.hidden {
 @media (max-width: 768px) {
   .article tbody td:last-child {
     padding: 20px 0 20px 0;
-  }
-}
-@media (max-width: 510px) {
-  .article tbody td {
-    font-size: 13px;
   }
 }
 .article .tab-2 tbody tr {
