@@ -263,10 +263,15 @@ body.hidden {
     -webkit-backdrop-filter: none;
             backdrop-filter: none;
     padding: 30px 15px;
+    
   }
 }
 .header-bottom img {
   border-radius: 12px;
+  
+  @media (max-width: 590px){
+   border-radius: 30px;
+  }
 }
 .header-bottom h1 {
   max-width: 800px;
